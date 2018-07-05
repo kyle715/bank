@@ -19,7 +19,7 @@ namespace bankAccount
         int total { get; set; }
         int id { get; set; }
         int customerName { get; set; }
-        string status { get; set; }
+        TransactionQueue accountTransactions { get; set; }
 
         public void ApplyTransaction()
         {
@@ -29,7 +29,13 @@ namespace bankAccount
     public class CheckingAccount: BankAccount
     {
         int ServiceFee { get; set; }
-        //Create transaction for yearly service fee and submit the transaction to the queue
+
+        //Create transaction for yearly service fee
+        public Transaction newServiceFee()
+        {
+            return new Transaction();
+        }
+         //submit the transaction to the queue
 
     }
     public class SavingAccount : BankAccount
@@ -49,13 +55,18 @@ namespace bankAccount
     public class TransactionQueue
     {
         List<Transaction> transactions;
-        void enque()
+        void enque(Transaction trans)
         {
+
         }
 
         void deque()
         {
 
+        }
+        void enque (string r)
+        {
+            return
         }
     }
 }
