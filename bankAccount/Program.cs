@@ -39,26 +39,26 @@ namespace bankAccount
         //submit the transaction to the queue
 
     }
-    public class SavingAccount : BankAccount
-    {
-        int interestRate { get; set; }
-        Transaction interest { get; set; }
+    // public class SavingAccount : BankAccount
+    // {
+    //     int interestRate { get; set; }
+    //     Transaction interest { get; set; }
 
-        public void interestCharge()
-        {
-            var interest = total + interestRate;
-            ApplyTransaction(interest);
-        }
-    }
-    public class Transaction : BankAccount
-    {
-        int amount { get; set; }
-        DateTime date { get; set; }
-        string type { get; set; }
+    //     public void interestCharge()
+    //     {
+    //         var interest = total + interestRate;
+    //         ApplyTransaction(interest);
+    //     }
+    // }
+    // public class Transaction : BankAccount
+    // {
+    //     int amount { get; set; }
+    //     DateTime date { get; set; }
+    //     string type { get; set; }
 
-        //Transactions only come as two base types (you must deduce the types). 
-        //Accounts can have more complicated transactions however when in a bank account a transaction only affects one item deduce that item.
-    }
+    //     //Transactions only come as two base types (you must deduce the types). 
+    //     //Accounts can have more complicated transactions however when in a bank account a transaction only affects one item deduce that item.
+    // }
     public class TransactionQueue : BankAccount
     {
         List<Transaction> transactions;
